@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:native_widget/native_widget.dart';
 
@@ -62,6 +63,27 @@ class _MyHomePageState extends State<MyHomePage> {
             NativeCheckBox(
               value: value,
               onChanged: (d) {},
+            ),
+            CupertinoActivityIndicator(
+              animating: false,
+              radius: 30,
+            ),
+            SizedBox.fromSize(
+              size: Size(30 * 2, 30 * 2),
+              child: CircularProgressIndicator(
+                // backgroundColor: Colors.red,
+                value: null,
+                color: Colors.blue,
+                // valueColor: AlwaysStoppedAnimation<Color>(Colors.yellow),
+                strokeWidth: 5.0,
+                semanticsLabel: "Madhan",
+                semanticsValue: "VALUE ADHAN",
+              ),
+            ),
+            CupertinoActivityIndicator.partiallyRevealed(
+              color: Colors.blue,
+              radius: 30,
+              key: widget.key,
             )
           ],
         ),
