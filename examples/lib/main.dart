@@ -64,13 +64,13 @@ class _MyHomePageState extends State<MyHomePage> {
               value: value,
               onChanged: (d) {},
             ),
-            CupertinoActivityIndicator(
+            const CupertinoActivityIndicator(
               animating: false,
               radius: 30,
             ),
             SizedBox.fromSize(
-              size: Size(30 * 2, 30 * 2),
-              child: CircularProgressIndicator(
+              size: const Size(30 * 2, 30 * 2),
+              child: const CircularProgressIndicator(
                 // backgroundColor: Colors.red,
                 value: null,
                 color: Colors.blue,

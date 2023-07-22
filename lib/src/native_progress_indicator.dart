@@ -7,7 +7,7 @@ class NativeProgressIndicator extends StatefulWidget {
   final Color? color;
 
   /// [a] means it works only in android
-  ///  [avalueColor], [astrokeWidth] will be ignored in iOS.
+  ///  [aValueColor], [aStrokeWidth] will be ignored in iOS.
   ///
   /// Whether the activity indicator is running its animation for iOS.
 
@@ -20,7 +20,7 @@ class NativeProgressIndicator extends StatefulWidget {
   final double radius;
   final Animation<Color>? aValueColor;
   final Color? aBackgroundColor;
-  final double? astrokewidth;
+  final double? aStrokewidth;
   final String? aSemanticlabel;
   final String? aSemanticValue;
 
@@ -40,10 +40,9 @@ class NativeProgressIndicator extends StatefulWidget {
     this.aSemanticlabel,
     this.radius = 10,
     this.aBackgroundColor,
-    this.astrokewidth,
+    this.aStrokewidth,
     this.progressValue,
   }) : super(key: key);
-
   @override
   State<NativeProgressIndicator> createState() =>
       _NativeProgressIndicatorState();
@@ -81,7 +80,7 @@ class _NativeProgressIndicatorState extends State<NativeProgressIndicator> {
           value: widget.progressValue,
           color: widget.color,
           valueColor: widget.aValueColor,
-          strokeWidth: widget.astrokewidth ?? UIDimens.size4,
+          strokeWidth: widget.aStrokewidth ?? UIDimens.size4,
         ),
       );
     }
