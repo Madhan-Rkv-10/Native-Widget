@@ -68,6 +68,11 @@ class _MyHomePageState extends State<MyHomePage> {
               animating: false,
               radius: 30,
             ),
+            NativeRadio(
+              value: value,
+              groupValue: "groupValue",
+              onChanged: null,
+            ),
             SizedBox.fromSize(
               size: const Size(30 * 2, 30 * 2),
               child: const CircularProgressIndicator(
