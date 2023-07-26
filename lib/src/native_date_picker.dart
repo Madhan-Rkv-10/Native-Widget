@@ -9,6 +9,13 @@ Future<void> showNativeDatePicker({
   required DateTime lastDate,
   Color? color,
 }) async {
+  /// You Need add LocalizationDelegate In your MaterialApp or CupertinoApp
+  /// localizationsDelegates: [
+  ///     DefaultMaterialLocalizations.delegate,
+  ///    DefaultCupertinoLocalizations.delegate,
+  ///    DefaultWidgetsLocalizations.delegate,
+  /// ],
+
   final iOS = (Theme.of(context).platform == (TargetPlatform.iOS) ||
       Theme.of(context).platform == (TargetPlatform.macOS));
   if (!iOS) {
