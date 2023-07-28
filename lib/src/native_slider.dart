@@ -1,11 +1,20 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:native_widget/src/widgets/native_show_widget.dart';
 
 class NativeSlider extends StatefulWidget {
+  /// The slider itself does not maintain any state. Instead, when the state of
+  /// the slider changes, the widget calls the [onChanged] callback. Most widgets
+  /// that use a slider will listen for the [onChanged] callback and rebuild the
+  /// slider with a new [value] to update the visual appearance of the slider.
+  ///
+  /// * [value] determines currently selected value for this slider.
+  /// * [onChanged] is called when the user selects a new value for the slider.
+  /// * [onChangeStart] is called when the user starts to select a new value for
+  ///   the slider.
+  /// * [onChangeEnd] is called when the user is done selecting a new value for
+  ///   the slider.
   final double value;
-
-  final double? secondaryTrackValue;
 
   final ValueChanged<double>? onChanged;
 
@@ -19,46 +28,22 @@ class NativeSlider extends StatefulWidget {
 
   final int? divisions;
 
-  final String? label;
-
   final Color? activeColor;
-
-  final Color? inactiveColor;
-
-  final Color? secondaryActiveColor;
 
   final Color? thumbColor;
 
-  final MaterialStateProperty<Color?>? overlayColor;
-
-  final MouseCursor? mouseCursor;
-
-  final SemanticFormatterCallback? semanticFormatterCallback;
-
-  final FocusNode? focusNode;
-
-  final bool autofocus;
-
-  const NativeSlider(
-      {super.key,
-      required this.value,
-      this.secondaryTrackValue,
-      this.onChanged,
-      this.onChangeStart,
-      this.onChangeEnd,
-      required this.min,
-      required this.max,
-      this.divisions,
-      this.label,
-      this.activeColor,
-      this.inactiveColor,
-      this.secondaryActiveColor,
-      this.thumbColor,
-      this.overlayColor,
-      this.mouseCursor,
-      this.semanticFormatterCallback,
-      this.focusNode,
-      required this.autofocus});
+  const NativeSlider({
+    super.key,
+    required this.value,
+    required this.onChanged,
+    this.onChangeStart,
+    this.onChangeEnd,
+    this.min = 0.0,
+    this.max = 1.0,
+    this.divisions,
+    this.activeColor,
+    this.thumbColor = CupertinoColors.white,
+  });
 
   @override
   State<NativeSlider> createState() => _NativeSliderState();
@@ -67,8 +52,32 @@ class NativeSlider extends StatefulWidget {
 class _NativeSliderState extends State<NativeSlider> {
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
-
-    return const Placeholder();
+    return NativeShow(
+      cupertinoChild: SizedBox(
+        width: double.infinity,
+        child: CupertinoSlider(
+          value: widget.value,
+          onChanged: widget.onChanged,
+          onChangeStart: widget.onChangeStart,
+          onChangeEnd: widget.onChangeEnd,
+          min: widget.min,
+          max: widget.max,
+          divisions: widget.divisions,
+          activeColor: widget.activeColor,
+          thumbColor: widget.thumbColor ?? CupertinoColors.white,
+        ),
+      ),
+      materialChild: Slider(
+        value: widget.value,
+        onChanged: widget.onChanged,
+        onChangeStart: widget.onChangeStart,
+        onChangeEnd: widget.onChangeEnd,
+        min: widget.min,
+        max: widget.max,
+        divisions: widget.divisions,
+        activeColor: widget.activeColor,
+        thumbColor: widget.thumbColor ?? CupertinoColors.white,
+      ),
+    );
   }
 }
