@@ -1,7 +1,5 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:native_widget/src/widgets/native_show_widget.dart';
 
 class NativeBottomNavBar extends StatelessWidget {
@@ -29,13 +27,10 @@ class NativeBottomNavBar extends StatelessWidget {
   final List<BottomNavigationBarItem> items;
   final void Function(int)? onTap;
   final Color? backgroundColor;
-
   final int currentIndex;
   final Color? color;
   final double iconSize;
 
-  /// The height of the [CupertinoTabBar].
-  ///
   /// Defaults to 50.0. Must not be null.
   final double height;
 
@@ -50,6 +45,7 @@ class NativeBottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return NativeShow(
       cupertinoChild: CupertinoTabBar(
+        key: key,
         items: items,
         onTap: onTap,
         currentIndex: currentIndex,
@@ -57,10 +53,21 @@ class NativeBottomNavBar extends StatelessWidget {
         inactiveColor: inactiveColor,
         border: border,
         height: height,
+        activeColor: activeColor,
         backgroundColor: backgroundColor,
       ),
-      materialChild: Text(
-        "",
+      materialChild: SizedBox(
+        height: height,
+        child: BottomNavigationBar(
+          key: key,
+          items: items,
+          iconSize: iconSize,
+          onTap: onTap,
+          currentIndex: currentIndex,
+          backgroundColor: backgroundColor,
+          selectedItemColor: activeColor,
+          unselectedItemColor: inactiveColor,
+        ),
       ),
     );
   }
