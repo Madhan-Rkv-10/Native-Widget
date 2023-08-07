@@ -1,24 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:native_widget/native_widget.dart';
 
-class NativeScrollbar extends StatefulWidget {
-  const NativeScrollbar({super.key});
+class NativeScrollbarExample extends StatefulWidget {
+  const NativeScrollbarExample({super.key});
 
   @override
-  State<NativeScrollbar> createState() => _NativeScrollbarState();
+  State<NativeScrollbarExample> createState() => _NativeScrollbarExampleState();
 }
 
-class _NativeScrollbarState extends State<NativeScrollbar> {
+class _NativeScrollbarExampleState extends State<NativeScrollbarExample> {
   double value = 0.0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
-        child: Scrollbar(
-          child: Text("data"),
-          thumbVisibility: true,
-          hoverThickness: 8,
-        ),
+        child: NativeScrollbar(child: Text("data")),
       ),
     );
   }

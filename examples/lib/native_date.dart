@@ -25,9 +25,9 @@ class _NativeDatePickerState extends State<NativeDatePicker> {
         // In this example, the date is formatted manually. You can
         // use the intl package to format the value based on the
         // user's locale settings.
-        child: Text(
+        child: const Text(
           'pickDate',
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 22.0,
           ),
         ),

@@ -1,3 +1,4 @@
+import 'package:examples/native_date_picker_example.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:native_widget/native_widget.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: NativeSliderExample(),
+      home: const NativeDatePickerExample(),
     );
   }
 }
