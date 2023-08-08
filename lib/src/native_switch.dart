@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class NativeSwitch extends StatefulWidget {
   // the following parameters are ignored for iOS:
+  /// prefix [a] indicates it works only for android
   /// [aActiveTrackColor], [aInactiveThumbColor], [aInactiveTrackColor],
   /// [aActiveThumbImage], [aOnActiveThumbImageError], [aInactiveThumbImage],
   /// [aOnInactiveThumbImageError], [aMaterialTapTargetSize].

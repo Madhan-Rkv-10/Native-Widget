@@ -94,7 +94,7 @@ class _NativeCheckBoxState extends State<NativeCheckBox> {
         shape: widget.shape,
       );
     } else {
-      return Checkbox(
+      return Checkbox.adaptive(
           value: widget.value,
           onChanged: widget.onChanged,
           activeColor: widget.activeColor,
