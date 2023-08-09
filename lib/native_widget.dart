@@ -11,3 +11,4 @@ export 'src/native_time_picker.dart';
 export 'src/native_elevated_button.dart';
 export 'src/native_text_button.dart';
 export 'src/native_bottom_nav_bar.dart';
+export 'src/native_dialog.dart';
