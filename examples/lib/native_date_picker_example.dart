@@ -34,9 +34,7 @@ class _NativeDatePickerExampleState extends State<NativeDatePickerExample> {
               },
               child: const Text("Select Date"),
             ),
-            Container(
-              child: Text("Selected Date $_selectedDate"),
-            ),
+            Text("Selected Date $_selectedDate"),
             TextButton(
               onPressed: () {
                 showNativeTimePicker(
@@ -49,9 +47,7 @@ class _NativeDatePickerExampleState extends State<NativeDatePickerExample> {
               },
               child: const Text("Select Time"),
             ),
-            Container(
-              child: Text("Selected Time $_selectedTime"),
-            ),
+            Text("Selected Time $_selectedTime"),
           ],
         ),
       ),

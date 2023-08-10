@@ -38,22 +38,18 @@ class NativeElevatedButton extends StatelessWidget {
         color: iOSTheme.primaryColor,
         child: child,
       ),
-      materialChild: padding != null
-          ? SizedBox(
-              width: 169,
-              height: 48,
-              child: ElevatedButton(
-                onPressed: onPressed,
-                style: ElevatedButton.styleFrom(
-                  alignment: alignment,
-                  backgroundColor: androidTheme.primaryColor,
-                  disabledForegroundColor: disabledColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: borderRadius!,
-                  ),
+      materialChild: padding == null
+          ? ElevatedButton(
+              onPressed: onPressed,
+              style: ElevatedButton.styleFrom(
+                alignment: alignment,
+                backgroundColor: androidTheme.primaryColor,
+                disabledForegroundColor: disabledColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: borderRadius!,
                 ),
-                child: child,
               ),
+              child: child,
             )
           : Padding(
               padding: padding!,

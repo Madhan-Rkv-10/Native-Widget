@@ -10,6 +10,7 @@ Future showNativeDialog(
     bool barrierDismissible = false,
     RouteSettings? routeSettings,
     Offset? anchorPoint,
+    Key? key,
     List<Widget> actions = const []}) async {
   bool isIOS = Theme.of(context).platform == TargetPlatform.iOS;
 
@@ -23,6 +24,7 @@ Future showNativeDialog(
       anchorPoint: anchorPoint,
       builder: (context) => CupertinoAlertDialog(
         title: title,
+        key: key,
         content: content,
         actions: actions,
       ),
@@ -36,6 +38,7 @@ Future showNativeDialog(
       routeSettings: routeSettings,
       anchorPoint: anchorPoint,
       builder: (context) => AlertDialog(
+        key: key,
         title: title,
         content: content,
         actions: actions,

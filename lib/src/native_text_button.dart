@@ -28,18 +28,14 @@ class NativeTextButton extends StatelessWidget {
         disabledColor: disabledColor!,
         child: child,
       ),
-      materialChild: padding != null
-          ? SizedBox(
-              width: 169,
-              height: 48,
-              child: TextButton(
-                onPressed: onPressed,
-                style: TextButton.styleFrom(
-                    alignment: alignment,
-                    disabledForegroundColor: disabledColor,
-                    shape: RoundedRectangleBorder(borderRadius: borderRadius!)),
-                child: child,
-              ),
+      materialChild: padding == null
+          ? TextButton(
+              onPressed: onPressed,
+              style: TextButton.styleFrom(
+                  alignment: alignment,
+                  disabledForegroundColor: disabledColor,
+                  shape: RoundedRectangleBorder(borderRadius: borderRadius!)),
+              child: child,
             )
           : Padding(
               padding: padding!,

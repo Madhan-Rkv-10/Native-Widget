@@ -11,29 +11,102 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
 
-## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+# Native Widget
 
-## Getting started
+A native widget that provides adaptive widgets based on platform is a widget that can be rendered differently depending on the platform it is running on. 
+# Content
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+- [Installation](#installation)
+- [List of Native Widgets](#list-of-native-widgets)
+- [Note](#suggestion)
 
-## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
+# Installation ⬇️
+Add to pubspec.yaml.
 ```dart
-const like = 'sample';
+dependencies:
+  ...
+  native_widget: ^0.0.1
 ```
 
-## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+
+## List of Native Widgets
+- Native Date Picker
+- Native Time Picker
+- Native Switch
+- Native Slider
+- Native ProgressIndicator
+- Native DialogBox
+- Native BottomNavbar
+- Native CheckBox
+- Native Radio
+- Native BottomNavbar
+- Native Scrollbar
+- Native TextButton
+- Native ElevatedButton 
+
+
+ 
+### Native Date Picker
+  To use native DatePicker ,Add LocalizationDelegate In your MaterialApp or CupertinoApp
+ ```dart
+localizationsDelegates: [
+      DefaultMaterialLocalizations.delegate,
+      DefaultCupertinoLocalizations.delegate,
+      DefaultWidgetsLocalizations.delegate,
+   ]
+ ``` 
+ #### Usage
+```dart
+TextButton(
+           onPressed: () {
+             showNativeDatePicker(
+               context: context,
+               onChanged: (selectedDate) {
+                log("selected date$date")
+               },
+               initialDate: DateTime.now(),
+               firstDate: DateTime(2020),
+               lastDate: DateTime.now(),
+             );
+           },
+           child: const Text("Select Date"),
+         )
+```
+
+### Native Time Picker
+
+#### Usage
+```dart
+TextButton(
+           onPressed: () {
+             showNativeTimePicker(
+                 context: context,
+                 onChanged: (time) {
+                   log("selected time$time")
+                 });
+           },
+           child: const Text("Select Time"),
+         )
+```
+### Native dialog  
+
+```dart
+TextButton(
+            onPressed: () {
+              showNativeDialog(
+                barrierDismissible: true,
+                context: context,
+                title: const Text(
+                  "Sample Dialog",
+                ),
+              );
+            },
+            child: const Text(
+              "open Dialog",
+            ),
+          )
+```
