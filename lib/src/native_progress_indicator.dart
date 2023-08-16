@@ -5,7 +5,7 @@ import 'package:native_widget/src/utils/helpers.dart';
 class NativeProgressIndicator extends StatefulWidget {
   final Color? color;
 
-  /// [a] means it works only in android
+  /// [a] indicates it works only in android
   ///  [aValueColor], [aStrokeWidth] will be ignored in iOS.
   ///
   /// Whether the activity indicator is running its animation for iOS.

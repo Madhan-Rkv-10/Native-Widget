@@ -20,7 +20,6 @@ A native widget that provides adaptive widgets based on platform is a widget tha
 
 - [Installation](#installation)
 - [List of Native Widgets](#list-of-native-widgets)
-- [Note](#suggestion)
 
 
 # Installation ⬇️
@@ -31,7 +30,10 @@ dependencies:
   native_widget: ^0.0.1
 ```
 
-
+## Add the following imports to your Dart code: 
+```dart
+import 'package:native_widget/native_widget.dart';
+```
 
 ## List of Native Widgets
 - Native Date Picker
@@ -45,8 +47,7 @@ dependencies:
 - Native Radio
 - Native BottomNavbar
 - Native Scrollbar
-- Native TextButton
-- Native ElevatedButton 
+
 
 
  
@@ -110,3 +111,18 @@ TextButton(
             ),
           )
 ```
+### Native CheckBox 
+#### Usage
+```dart
+NativeCheckBox(
+            value: onChanged,
+            onChanged: (value) {
+              setState(() {
+                onChanged = value!;
+              });
+            })
+```
+
+## Issue and feedback 💭 
+
+If you have any suggestion for including a feature or if something doesn't work, feel free to open a Github [issue](https://github.com/Madhan-Rkv-10/Native-Widget/issues) for us to have a discussion on it.

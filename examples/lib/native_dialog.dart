@@ -14,20 +14,21 @@ class _NativeDialogExampleState extends State<NativeDialogExample> {
     return Scaffold(
       body: Column(
         children: [
+          FractionallySizedBox(),
           TextButton(
             onPressed: () {
               showNativeDialog(
-                barrierDismissible: true,
-                context: context,
-                title: const Text(
-                  "Sample Dialog",
-                ),
-              );
+                  barrierDismissible: true,
+                  context: context,
+                  title: const Text(
+                    "Sample Dialog",
+                  ),
+                  actions: []);
             },
             child: const Text(
               "open Dialog",
             ),
-          )
+          ),
         ],
       ),
     );
